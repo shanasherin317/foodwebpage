@@ -130,7 +130,7 @@ setButton(false);
             return (
               <>
 
-              <button className="explore" onClick={() => handleCategoryClick(item.strCategory)}> <img className="btnimg" src={item.strCategoryThumb} alt="" /> <br />{item.strCategory}</button>
+              <button className="btns" onClick={() => handleCategoryClick(item.strCategory)}> <img className="btnimg" src={item.strCategoryThumb} alt="" /> <br />{item.strCategory}</button>
 
               </>
             )
@@ -157,11 +157,14 @@ data?.map(({strMealThumb,strArea,price})=>{
        <div>
                   <i
                     onClick={() => wishlistAdd(strMealThumb, strArea)}
-                    style={{ margin: "10px", color: isInWishlist(strMealThumb) ? "red" : "black" }}
+                    style={{ margin: "10px", color: isInWishlist(strMealThumb) ? "red" : "white" }}
                     className="fa-solid fa-heart"
                   ></i>
                 </div>
+                <div style={{textAlign:"center"}}>
    <img className="clctionimg" src={strMealThumb} alt="" />
+
+                </div>
  <h2 className="headclction">{strArea}</h2>
   <p className="paraclction">{price}</p>
    </div>
@@ -202,3 +205,5 @@ search.map(({strMealThumb,strArea,price})=>{
 }
 
 export default Explore
+
+

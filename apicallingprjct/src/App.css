@@ -46,15 +46,11 @@ height: 50px;
 display: none;
 }
 .button{
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: rgb(207, 131, 73);
-  padding-left:30px ;
-  padding-right: 30px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background-color: #DA8F4D;
   border: none;
-  border-radius: 10px;
   color: white;
-  border: 1px solid white;
 }
 @media screen and (max-width:830px){
   .navbar{
@@ -92,7 +88,8 @@ display: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  /* background: linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0)); */
+  background-color: black;
   /* padding: 50px 20px 20px 30px; */
   background-position: center;
   background-repeat: no-repeat;
@@ -108,8 +105,8 @@ display: none;
 }
 .para{
   width: 500px;
-  font-size: 18px;
-  color: black;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
 }
 .heading1{
   font-family: Poppins;
@@ -118,7 +115,7 @@ font-weight: 700;
 line-height: 60px;
 letter-spacing: 0rem;
 text-align: left;
-color: black;
+color: rgb(255, 255, 255);
 }
 .btn1{
   background: linear-gradient(0deg, #DA8F4D, #DA8F4D),
@@ -131,7 +128,7 @@ margin-top: 10px;
 }
 .btn2{
   background-color: transparent;
-color: black;
+color: white;
 border:2px solid rgb(220, 211, 39);
 padding: 8px 16px;
 border-radius: 20px;
@@ -158,32 +155,27 @@ margin-left: 10px;
 .about{
   width: 100%;
   height: 90vh;
-  background: linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  background-color: black;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
-.frstimg{
-  display: flex;
-}
-.scndimg{
-  display: flex;
-}
+
 .aboutimg{
-  width: 200px;
+  width: 190px;
   margin-top: 10px;
 }
 .aboutimg1{
   width: 200px;
-  margin-left: 10px;
-  margin-top: 10px;
+ 
 }
 .txtparadiv{
-  width: 500px;
+  width: 1000px;
   font-size: medium;
 }
 .ppp{
-  font-size:20px;
+  font-size:17px;
+  color: white;
 }
 .txtparadiv button{
   padding: 8px 16px;
@@ -191,10 +183,6 @@ margin-left: 10px;
   border-radius: 30px;
   border: 2px solid #DA8F4D;
   background-color: #f2e295;
-}
-.aboutdiv{
-
-
 }
 .clction1{
   display: flex;
@@ -210,32 +198,35 @@ margin-left: 10px;
   align-items: center;
 }
 .clctionimg{
-  width:160px;
+  width:100px;
   border-radius: 30px;
- margin: 20px 30px;
+ margin: 10px 0px ;
 }
 .clction{
 
   padding: 20px 30px;
-  background: linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  background:black;
 }
 .cards{
-  /* padding:15px 5px; */
-  width: auto;
-  height: 320px;
+  padding: 5px 1px;
+  /* width: 200px;
+  height: 280px; */
   border: 3px solid rgb(223, 230, 163);
   margin-bottom: 10px;
   /* margin-left: 10px;
   margin-top: 10px; */
+  border-radius: 30px;
 }
 .headclction{
   font-weight: bold;
   text-align: center;
+  color: white;
 }
 .paraclction{
-  font-size: 18px;
-  width: 260px;
+  font-size: 14px;
+  width: 200px;
   text-align: center;
+  color: white;
 }
 @media screen and (max-width:1055px){
   .clction1,.clction2{
@@ -251,13 +242,14 @@ margin-left: 10px;
   background-color: transparent;
   font-size: medium;
   border-radius: 30px;
+  color: white;
 }
 .explore:hover{
   background-color: rgb(223, 230, 163);
 }
 .topmenu{
  padding: 20px 50px;
-  background: linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  background:black
 }
 .item{
   padding: 40px 40px;
@@ -266,13 +258,14 @@ margin-left: 10px;
   align-items: center;
   width: 100%;
   height: 90vh;
-  background: linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  background:black;
 }
 .itemimg{
   width: 400px;
 }
 .textdiv{
   margin-left: 60px;
+  color: white;
 }
 .footer{
   padding: 40px 40px;
@@ -281,16 +274,18 @@ margin-left: 10px;
   align-items: center;
   width: 100%;
   height: 70vh;
-  background: linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  background: black;
 }
 .txtdiv p{
   width: 500px;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: white;
 }
 .txtdiv h1{
   text-align: center;
+  color: white;
 }
 .email{
   text-align: center;
@@ -348,7 +343,7 @@ font-size: 15px;
   gap: 25px;
 }
 .maindiv{
-  background:linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  background:black;
   width:100%;
   height:auto;
   padding-bottom: 30px;
@@ -373,9 +368,10 @@ font-size: 15px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 .products{
-  background:linear-gradient(rgb(250, 243, 40),white,rgb(255, 208, 0));
+  background:black;
 }
 .wishlist{
   display: flex;
@@ -408,4 +404,8 @@ font-size: 15px;
 }
 .dddd{
   text-align: center;
+}
+.btns{
+  background-color: black;
+  border: none;
 }

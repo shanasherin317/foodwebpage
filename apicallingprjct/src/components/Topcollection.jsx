@@ -40,7 +40,10 @@ data?.map(({strMealThumb,strArea},index)=>{
     return(
       <>
             <div className="cards">
+              <div style={{textAlign:"center"}}>
             <img className="clctionimg" src={strMealThumb} alt="" />
+
+              </div>
             <h2 className="headclction">{strArea}</h2>
             <p className="paraclction">Tasty Burger with French fries fast Food Ai image</p>
             </div> 

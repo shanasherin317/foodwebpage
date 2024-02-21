@@ -44,11 +44,14 @@ function Topmenu() {
                 <div>
                   <i
                     onClick={() => wishlistAdd(strMealThumb, strArea)}
-                    style={{ margin: "10px", color: isInWishlist(strMealThumb) ? "red" : "black" }}
+                    style={{ margin: "10px", color: isInWishlist(strMealThumb) ? "red" : "white" }}
                     className="fa-solid fa-heart"
                   ></i>
                 </div>
+                <div style={{textAlign:"center"}}>
                 <img className="clctionimg" src={strMealThumb} alt="" />
+
+                </div>
                 <h2 className="headclction">{strArea}</h2>
                 <p className="paraclction">33rs</p>
               </div>
