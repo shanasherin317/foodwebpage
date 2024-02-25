@@ -4,12 +4,10 @@ import { AppContext } from "../../App";
 
 function Explore() {
 
-  const{wishlistClick} =useContext(AppContext);
-  // const [selectedCategory, setSelectedCategory] = useState(null);
+  const{wishlistClick,wishlist,addToCart} =useContext(AppContext);
   const [category,setCategories] = useState([]);
   const [data,setData]=useState([]);
   const [search,setSearch]=useState([]);
-  const [color, setColor] = useState([]);
   const[display,setDisplay] = useState(false);
   const [button,setButton] =useState(false);
   const[restore,setRestore]=useState(false);
@@ -84,20 +82,14 @@ const handleOnClick = (e) => {
   }
 
 
-  const wishlistAdd = (strMealThumb, strArea) => {
-    setColor([...color, { strMealThumb, strArea }]);
-    wishlistClick(strMealThumb, strArea);
-  };
-
-
-  const isInWishlist = (strMealThumb) => {
-    return color.some(item => item.strMealThumb === strMealThumb);
+  const wishlistAdd = (item) => {
+    wishlistClick(item);
   };
 
   const handleSort=()=>{
     const dataSort= data.sort((a,b)=>{
       if (a.strArea<b.strArea) {
-        return -1;
+        return -1;    
       }
       if (a.strArea>b.strArea) {
         return 1;
@@ -130,7 +122,9 @@ setButton(false);
             return (
               <>
 
-              <button className="btns" onClick={() => handleCategoryClick(item.strCategory)}> <img className="btnimg" src={item.strCategoryThumb} alt="" /> <br />{item.strCategory}</button>
+              <button className="btns" onClick={() => {
+                handleCategoryClick(item.strCategory)
+              }}> <img className="btnimg" src={item.strCategoryThumb} alt="" /> <br />{item.strCategory}</button>
 
               </>
             )
@@ -145,10 +139,10 @@ setButton(false);
     <button className="btnss" onClick={handleSort}>Sort</button> }
       </div>
     <div style={{display:"flex",flexWrap:"wrap" ,justifyContent:"space-evenly" }}>
-
+        {console.log(data,'data')}
 
 {!display &&
-data?.map(({strMealThumb,strArea,price})=>{
+data?.map((item)=>{
 
     return(
       <>
@@ -156,17 +150,20 @@ data?.map(({strMealThumb,strArea,price})=>{
        <div className="cards">
        <div>
                   <i
-                    onClick={() => wishlistAdd(strMealThumb, strArea)}
-                    style={{ margin: "10px", color: isInWishlist(strMealThumb) ? "red" : "white" }}
+                    onClick={() => wishlistAdd(item)}
+                    style={{ margin: "10px", color: wishlist.find((list)=>item.idMeal===list.idMeal)? "red" : "white" }}
                     className="fa-solid fa-heart"
                   ></i>
                 </div>
                 <div style={{textAlign:"center"}}>
-   <img className="clctionimg" src={strMealThumb} alt="" />
+   <img className="clctionimg" src={item.strMealThumb} alt="" />
 
                 </div>
- <h2 className="headclction">{strArea}</h2>
-  <p className="paraclction">{price}</p>
+ <h2 className="headclction">{item.strArea}</h2>
+  <p className="paraclction">{item.price}</p>
+  <div style={{textAlign:"center"}}>
+                <p className="addtocart" onClick={()=>addToCart(item)}>Add to cart</p>
+              </div>
    </div>
 
       </>
@@ -175,7 +172,7 @@ data?.map(({strMealThumb,strArea,price})=>{
 }
 
 {
-search.map(({strMealThumb,strArea,price})=>{
+search.map((item)=>{
 
     return(
       <>
@@ -183,14 +180,20 @@ search.map(({strMealThumb,strArea,price})=>{
      <div className="cards">
        <div>
                   <i
-                    onClick={() => wishlistAdd(strMealThumb, strArea)}
-                    style={{ margin: "10px", color: isInWishlist(strMealThumb) ? "red" : "black" }}
+                    onClick={() => wishlistAdd(item)}
+                    style={{ margin: "10px",  color: wishlist.find((list)=>item.idMeal===list.idMeal)? "red" : "white" }}
                     className="fa-solid fa-heart"
                   ></i>
                 </div>
-   <img className="clctionimg" src={strMealThumb} alt="" />
- <h2 className="headclction">{strArea}</h2>
-  <p className="paraclction">{price}</p>
+                <div style={{textAlign:"center"}}>
+   <img className="clctionimg" src={item.strMealThumb} alt="" />
+
+                </div>
+ <h2 className="headclction">{item.strArea}</h2>
+  <p className="paraclction">{item.price}</p>
+  <div style={{textAlign:"center"}}>
+                <p className="addtocart">Add to cart</p>
+              </div>
    </div>
       </>
     )

@@ -24,9 +24,15 @@ function Navbar() {
                 <li>
                     <a href="#contact">road map</a>
                 </li>
+                <Link to={'/signin'}>
                 <button className="button">sign in </button>
+                
+                </Link>
                 <Link to={'/wishlist'}>
                 <button className="wishlistbtn">Wishlist<i className="fa-solid fa-heart"></i></button>
+                </Link>
+                <Link to={'/cart'}>
+                <button className="wishlistbtn"><i className="fa-solid fa-cart-shopping"></i></button>
                 </Link>
             </ul>
            

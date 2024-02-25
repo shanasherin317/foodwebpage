@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { AppContext } from "../App";
+
 
 function Topcollection() {
 
   const [data,setData]=useState([]);
+  const { addToCart ,cart,handleOnAdd,handleOnRemove,removeClick} = useContext(AppContext);
 
  const fetchData=async()=>{
 
@@ -23,15 +26,15 @@ useEffect(()=>{
   return (
     <div className='clction'>
         <div>
-            <h1 style={{fontWeight:"bold",textAlign:"center",marginBottom:"20px"}}>Top Collections</h1>
-            <p style={{fontSize:"20px",textAlign:"center",marginBottom:"20px"}}>The largest and unique Super rare NFT marketplace <br /> For crypto-collectibles</p>
+            <h1 style={{fontWeight:"bold",textAlign:"center",marginBottom:"20px",color:"white"}}>Top Collections</h1>
+            <p style={{fontSize:"20px",textAlign:"center",marginBottom:"20px",color:"white"}}>The largest and unique Super rare NFT marketplace <br /> For crypto-collectibles</p>
         </div>
         <div className='collection'>
         <div className='clction1'>
          
 
             {
-data?.map(({strMealThumb,strArea},index)=>{
+data?.map((item,index)=>{
    if (!(index < 8)) {
     return false
    }else{
@@ -41,19 +44,46 @@ data?.map(({strMealThumb,strArea},index)=>{
       <>
             <div className="cards">
               <div style={{textAlign:"center"}}>
-            <img className="clctionimg" src={strMealThumb} alt="" />
+            <img className="clctionimg" src={item.strMealThumb} alt="" />
 
               </div>
-            <h2 className="headclction">{strArea}</h2>
+            <h2 className="headclction">{item.strArea}</h2>
             <p className="paraclction">Tasty Burger with French fries fast Food Ai image</p>
-            </div> 
-     
+            <div style={{textAlign:"center"}}>
+                  
+                  {
+                    cart.find((cartItem)=> cartItem.idMeal===item.idMeal ) ? 
+                    <>
+                    
+                    <div style={{textAlign:"center",color:"white"}}>
+                    <button className='btn1'  onClick={()=>handleOnAdd(item)}>+</button>
+                    {
+                      cart.find((cartItem)=> cartItem.idMeal===item.idMeal ).count
+                    }
+              
+                    <button className='btn1 ms-2' onClick={()=>handleOnRemove(item)} >-</button>
+                    </div>
 
-      </>
-    )
-   }
-  })
-}
+                    <div style={{textAlign:"center"}}>
+                <button className="btn1" style={{marginTop:"10px"}} onClick={()=>removeClick(item)} ><i className="fa-solid fa-trash"></i></button>
+              </div>
+
+
+                    </>
+
+                
+                    
+                    : <p className="addtocart" onClick={()=>addToCart(item)}>Add to cart</p>
+                
+                  }
+                
+              </div>
+              </div>
+              </>
+            );
+          }
+        })
+        }
                    
         </div>
           <Link to={"/explore"}>

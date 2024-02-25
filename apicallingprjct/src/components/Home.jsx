@@ -13,15 +13,15 @@ function Home() {
       <button className="btn1">Get Whitelist</button>
       <button className="btn2">Contact Us</button>
       <div className="did">
-        <div>
+        <div style={{color:"white"}}>
             <p>240k+</p>
              <p>Total Sale</p>
         </div>
-        <div  style={{marginLeft:"20px"}}>
+        <div  style={{marginLeft:"20px",color:"white"}}>
             <p>100k+</p>
              <p>Auctions</p>
         </div>
-        <div style={{marginLeft:"20px"}}>
+        <div style={{marginLeft:"20px",color:"white"}}>
             <p>240k+</p>
              <p>Artists</p>
         </div>
