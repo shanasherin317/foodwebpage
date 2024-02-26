@@ -152,7 +152,7 @@ margin-left: 10px;
   width: auto;
 }
 }
-.about{
+/* .about{
   width: 100%;
   height: 90vh;
   background-color: black;
@@ -183,7 +183,114 @@ margin-left: 10px;
   border-radius: 30px;
   border: 2px solid #DA8F4D;
   background-color: #f2e295;
-}
+} */
+
+
+.images .about-image img{
+  width: 150px;
+  border-radius: 10px;
+  
+  }
+  .images .about-image1 img{
+      width: 150px;
+      border-radius: 10px;
+      }
+  
+  .about-image{
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 15px;
+  
+  
+  
+  }
+  .about-image1{
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 15px;
+  
+  
+  
+  }
+  .images{
+      width: 450px;
+  
+  }
+  .about{
+      height: 80vh;
+      background-color: black;
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+  }
+  .paragraph p{
+      color: white;
+  }
+  .about-button button{
+      margin-top: 20px;
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: rgb(207, 131, 73);
+      padding-left:30px ;
+      padding-right: 30px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      border: 1px solid white;
+  }
+  .flex{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      height: 70vh;
+  
+  
+  
+  
+  }
+  .about h1{
+      color: white;
+      text-align: center;
+      margin-bottom: 5px;
+  }
+  @media screen and (max-width:1000px){
+      .flex{
+          flex-direction: column;
+         height: 80vh;
+  
+      }
+      .images .about-image1 img{
+        width: 150px;
+  
+  
+      }
+      .images .about-image img{
+        display: none;
+  
+      }
+      .paragraph p{
+          font-size: 15px;
+      }
+      .about-image1{
+          width: 380px;
+      }
+      .images{
+          width: 380px;
+      }
+  
+  
+  
+  
+  
+  }
+  @media screen and (max-width:400px){
+      .paragraph p{
+          font-size: 10px;
+      }
+  }
+
+
 .clction1{
   display: flex;
   gap: 10px;

@@ -46,7 +46,7 @@ cart?.map((item)=>{
           <button className='btn1 ms-2' onClick={()=>handleOnRemove(item)} >-</button>
           </div>
           <div style={{textAlign:"center"}}>
-                <button className="btn1" style={{marginTop:"10px"}} onClick={()=>removeClick(item)} >Remove</button>
+                <button className="btn1" style={{marginTop:"10px"}} onClick={()=>removeClick(item)} ><i className="fa-solid fa-trash"></i></button>
               </div>
 
             </div>
